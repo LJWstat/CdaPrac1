@@ -12,39 +12,39 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // soft_threshold
 double soft_threshold(double z, double lambda);
-RcppExport SEXP _LassoReg_soft_threshold(SEXP zSEXP, SEXP lambdaSEXP) {
-  BEGIN_RCPP
-  Rcpp::RObject rcpp_result_gen;
-  Rcpp::RNGScope rcpp_rngScope_gen;
-  Rcpp::traits::input_parameter< double >::type z(zSEXP);
-  Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
-  rcpp_result_gen = Rcpp::wrap(soft_threshold(z, lambda));
-  return rcpp_result_gen;
-  END_RCPP
+RcppExport SEXP _CdaPrac1_soft_threshold(SEXP zSEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type z(zSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(soft_threshold(z, lambda));
+    return rcpp_result_gen;
+END_RCPP
 }
 // lasso_cda_cpp
 NumericVector lasso_cda_cpp(NumericMatrix X, NumericVector y, double lambda, int max_iter, double tol);
-RcppExport SEXP _LassoReg_lasso_cda_cpp(SEXP XSEXP, SEXP ySEXP, SEXP lambdaSEXP, SEXP max_iterSEXP, SEXP tolSEXP) {
-  BEGIN_RCPP
-  Rcpp::RObject rcpp_result_gen;
-  Rcpp::RNGScope rcpp_rngScope_gen;
-  Rcpp::traits::input_parameter< NumericMatrix >::type X(XSEXP);
-  Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-  Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
-  Rcpp::traits::input_parameter< int >::type max_iter(max_iterSEXP);
-  Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
-  rcpp_result_gen = Rcpp::wrap(lasso_cda_cpp(X, y, lambda, max_iter, tol));
-  return rcpp_result_gen;
-  END_RCPP
+RcppExport SEXP _CdaPrac1_lasso_cda_cpp(SEXP XSEXP, SEXP ySEXP, SEXP lambdaSEXP, SEXP max_iterSEXP, SEXP tolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type X(XSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< int >::type max_iter(max_iterSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(lasso_cda_cpp(X, y, lambda, max_iter, tol));
+    return rcpp_result_gen;
+END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-  {"_LassoReg_soft_threshold", (DL_FUNC) &_LassoReg_soft_threshold, 2},
-  {"_LassoReg_lasso_cda_cpp", (DL_FUNC) &_LassoReg_lasso_cda_cpp, 5},
-  {NULL, NULL, 0}
+    {"_CdaPrac1_soft_threshold", (DL_FUNC) &_CdaPrac1_soft_threshold, 2},
+    {"_CdaPrac1_lasso_cda_cpp", (DL_FUNC) &_CdaPrac1_lasso_cda_cpp, 5},
+    {NULL, NULL, 0}
 };
 
-RcppExport void R_init_LassoReg(DllInfo *dll) {
-  R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-  R_useDynamicSymbols(dll, FALSE);
+RcppExport void R_init_CdaPrac1(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
