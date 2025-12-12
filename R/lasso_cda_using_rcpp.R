@@ -1,3 +1,7 @@
+
+#'
+#' @export
+#'
 lasso_cda = function(X, y, lambda, max_iter = 1000, tol = 1e-6)
 {
   # 표준화
