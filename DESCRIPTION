@@ -2,7 +2,10 @@ Package: CdaPrac1
 Title: Coordinate Descent Algorithm Utilities in R
 Version: 0.0.0.9000
 Authors@R: c(
-person("JIWOO", "LEE", email = "jiwoo04082500@gmail.com", role = c("aut", "cre")))
+    person("JIWOO", "LEE", 
+           email = "jiwoo04082500@gmail.com", 
+           role = c("aut", "cre"))
+)
 Description: Provides simple and intuitive functions for Coordinate Descent Algorithm (CDA). Includes model fitting, prediction utilities,
     and examples using simulated regression data for educational purposes.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
