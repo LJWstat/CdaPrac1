@@ -43,4 +43,3 @@ cat("\n Intercept:\n", intercept_hat, "\n")
 cat("\n MSE:", mse, "\n")
 cat("R-squared:", r_squared, "\n")
 cat("TP:", TP, "| FP:", FP, "| FN:", FN, "\n")
-
